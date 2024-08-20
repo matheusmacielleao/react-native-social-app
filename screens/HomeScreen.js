@@ -1,5 +1,4 @@
-// screens/HomeScreen.js
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { View, Text, Button, FlatList } from "react-native";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
