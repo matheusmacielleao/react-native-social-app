@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { View, TextInput, Button } from "react-native";
+import { View, TextInput, Button, Text } from "react-native";
 import axios from "axios";
+import { stylesInput } from "./LoginScreen.js";
 
 export default function RegisterScreen({ navigation }) {
   const [email, setEmail] = useState("");
@@ -20,12 +21,22 @@ export default function RegisterScreen({ navigation }) {
 
   return (
     <View>
-      <TextInput placeholder="Email" value={email} onChangeText={setEmail} />
+      <Text> Email:</Text>
+
+      <TextInput
+        placeholder="Email"
+        value={email}
+        onChangeText={setEmail}
+        style={stylesInput.input}
+      />
+      <Text> Password:</Text>
+
       <TextInput
         placeholder="Password"
         value={password}
         onChangeText={setPassword}
         secureTextEntry
+        style={stylesInput.input}
       />
       <Button title="Register" onPress={handleRegister} />
     </View>

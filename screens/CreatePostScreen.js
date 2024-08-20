@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { View, TextInput, Button } from "react-native";
+import { View, TextInput, Button, Text } from "react-native";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { stylesInput } from "./LoginScreen.js";
 
 export default function CreatePostScreen({ navigation }) {
   const [title, setTitle] = useState("");
@@ -24,11 +25,19 @@ export default function CreatePostScreen({ navigation }) {
 
   return (
     <View>
-      <TextInput placeholder="Title" value={title} onChangeText={setTitle} />
+      <Text> Title:</Text>
+      <TextInput
+        placeholder="Title"
+        value={title}
+        onChangeText={setTitle}
+        style={stylesInput.input}
+      />
+      <Text> Content:</Text>
       <TextInput
         placeholder="Content"
         value={content}
         onChangeText={setContent}
+        style={stylesInput.input}
       />
       <Button title="Create Post" onPress={handleCreatePost} />
     </View>

@@ -34,13 +34,15 @@ export default function HomeScreen({ navigation }) {
         title="Create Post"
         onPress={() => navigation.push("CreatePost")}
       />
+      <Text>Posts:</Text>
       <FlatList
         data={posts}
         keyExtractor={(item) => item.title}
         renderItem={({ item }) => (
           <View>
-            <Text>{item.title}</Text>
-            <Text>{item.content}</Text>
+            <Text>Title: {item.title}</Text>
+            <Text>Content: {item.content}</Text>
+            <Text>------------------------</Text>
           </View>
         )}
       />
